@@ -22,7 +22,7 @@ yarn mock-api
 # default port 3000
 # yarn mock-api --port <YOUR-PORT>
 ```
-4. Copy file `.env.exampl` to `.env.local`
+4. Copy file `.env.example` to `.env.local`
 5. Start server dev
 ```bash
 yarn dev
