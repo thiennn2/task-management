@@ -23,7 +23,12 @@ function TaskForm(props: ITaskFormProps) {
         <Input autoFocus placeholder="Enter task title" />
       </Form.Item>
       <Form.Item>
-        <Button disabled={loading} type="primary" htmlType="submit" icon={<PlusOutlined />}>
+        <Button
+          disabled={loading}
+          type="primary"
+          htmlType="submit"
+          icon={<PlusOutlined />}
+        >
           Add Task
         </Button>
       </Form.Item>

@@ -55,7 +55,7 @@ const TaskManager: React.FC = () => {
     } catch (error) {
       message.error("Failed to update task");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -70,7 +70,11 @@ const TaskManager: React.FC = () => {
       <h1>Task Manager</h1>
       <TaskForm loading={loading} form={form} onFinish={addTask} />
       <TaskFilter value={filter} onChange={(e) => setFilter(e.target.value)} />
-      <TaskList loading={loading} data={filteredTasks} onChange={toggleTaskCompletion} />
+      <TaskList
+        loading={loading}
+        data={filteredTasks}
+        onChange={toggleTaskCompletion}
+      />
     </div>
   );
 };
