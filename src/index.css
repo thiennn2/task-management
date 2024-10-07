@@ -56,7 +56,7 @@ body {
   width: 100%;
 }
 
-.label-w-100 .ant-checkbox+span {
+.label-w-100 .ant-checkbox + span {
   width: 100%;
 }
 .text-overflow-ellipsis {

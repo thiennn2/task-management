@@ -1,27 +1,27 @@
-const baseUrl = import.meta.env.VITE_BASE_API_URL;
+const baseUrl = import.meta.env.VITE_BASE_API_URL as string
 
 function addTask({ title }: { title: string }) {
   return fetch(`${baseUrl}/tasks`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title, completed: false }),
-  });
+  })
 }
 
 function getAllTasks() {
-  return fetch(`${baseUrl}/tasks`);
+  return fetch(`${baseUrl}/tasks`)
 }
 
 function putTask(taskId: string | number, tasks: Task) {
   return fetch(`${baseUrl}/tasks/${taskId}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(tasks),
-  });
+  })
 }
 
 export default {
   addTask,
   getAllTasks,
   putTask,
-};
+}

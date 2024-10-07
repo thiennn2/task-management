@@ -1,13 +1,13 @@
-import { Checkbox, List } from "antd";
+import { Checkbox, List } from 'antd'
 
 interface ITaskListProps {
-  loading?: boolean;
-  data: Task[];
-  onChange: (task: Task) => void;
+  loading?: boolean
+  data: Task[]
+  onChange: (task: Task) => Promise<void>
 }
 
 function TaskList(props: ITaskListProps) {
-  const { loading, data, onChange } = props;
+  const { loading, data, onChange } = props
   return (
     <List
       loading={loading}
@@ -17,7 +17,9 @@ function TaskList(props: ITaskListProps) {
           <Checkbox
             className="label-w-100"
             checked={task.completed}
-            onChange={() => onChange(task)}
+            onChange={() => {
+              void onChange(task)
+            }}
             title={task.title}
           >
             <span className="text-overflow-ellipsis" title={task.title}>
@@ -27,7 +29,7 @@ function TaskList(props: ITaskListProps) {
         </List.Item>
       )}
     />
-  );
+  )
 }
 
-export default TaskList;
+export default TaskList

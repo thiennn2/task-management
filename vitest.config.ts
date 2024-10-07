@@ -11,10 +11,7 @@ export default defineConfig({
       name: 'chromium',
       provider: 'playwright',
     },
-    exclude: [
-      '**/node_modules/**',
-      '**/dist/**',
-    ],
+    exclude: ['**/node_modules/**', '**/dist/**'],
   },
   server: {
     fs: {

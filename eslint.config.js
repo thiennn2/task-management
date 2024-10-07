@@ -7,13 +7,12 @@ import tseslint from 'typescript-eslint'
 import prettier from 'prettier'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'vitest.config.ts', 'vite.config.ts'] },
   {
     extends: [
       js.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
-      'plugin:prettier/recommended',
     ],
     settings: { react: { version: '18.3.1' } },
     files: ['**/*.{ts,tsx}'],
@@ -23,22 +22,23 @@ export default tseslint.config(
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
-      }
+      },
     },
     plugins: {
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      'prettier': prettier,
+      prettier: prettier,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
+      '@typescript-eslint/unbound-method': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
     },
-  },
+  }
 )
