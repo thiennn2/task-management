@@ -3,7 +3,7 @@ import type { RadioChangeEvent } from "antd";
 import { TASK_FILTER } from "../../utils/constants";
 
 interface ITaskFilterProps {
-  value: any;
+  value: TASK_FILTER;
   onChange: (e: RadioChangeEvent) => void;
 }
 

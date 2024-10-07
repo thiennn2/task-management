@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "antd";
+import { Button, Form, Input } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 import type { FormInstance } from "antd";
@@ -6,7 +6,7 @@ import type { FormInstance } from "antd";
 interface ITaskFormProps {
   loading: boolean;
   form: FormInstance;
-  onFinish: ((values: any) => void) | undefined;
+  onFinish: ((values: { title: string }) => void) | undefined;
 }
 
 function TaskForm(props: ITaskFormProps) {

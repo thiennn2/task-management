@@ -1,4 +1,4 @@
-import { List, Checkbox } from "antd";
+import { Checkbox, List } from "antd";
 
 interface ITaskListProps {
   loading?: boolean;
